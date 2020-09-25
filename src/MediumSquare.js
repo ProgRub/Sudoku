@@ -16,15 +16,15 @@ class MediumSquare extends React.Component {
         for (let y = 0; y < this.props.size; y++) {
             const cols = []
             for (let x = 0; x < this.props.size; x++) {
-                cols.push(<td><Cell x={x} y={y} ></Cell></td>);
+                cols.push(<td><Cell x={this.state.x*this.props.size+ x} y={this.state.y*this.props.size+ y} mediumSquareIndex={this.state.x*this.props.size+this.state.y}></Cell></td>);
             }
 
             rows.push(<tr>{cols}</tr>);
         }
 
         return (
-            <div class='mediumSquare' style={{border:'thick solid #0000FF'}}>
-                <table cellspacing="0" >
+            <div className='mediumSquare' style={{border:'thick solid #0000FF'}}>
+                <table cellSpacing="0" >
                     <tbody>
                         {rows}
                     </tbody>

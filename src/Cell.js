@@ -13,11 +13,15 @@ class Cell extends React.Component {
 
     // this.handleChange = this.handleChange.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
-  // onClick(e) {
-  //   e.currentTarget.style.backgroundColor = this.props.colors[this.props.colorIndex];
-  // };
+  onClick(event) {
+    let cellsList = document.querySelectorAll(".cell");
+    for (var index = 0; index < cellsList.length; index++){
+      cellsList[index].style.background = 'white';
+    }
+  };
   // handleChange(event) {
   //   // console.log(event.target)
   //   this.setState({value: event.target.value});
@@ -36,7 +40,7 @@ class Cell extends React.Component {
   render() {
     return (
       <form>
-        <input id={`cell-${this.props.x}-${this.props.y}`} autocomplete="off" className='cell' type="text" value={this.state.value} onKeyDown={this.handleKeyDown} style={{ width: '45px', height: '45px', fontSize: '30px', fontFamily: 'Times New Roman', textAlign: 'center' }} />
+        <input id={`cell-${this.state.x}-${this.state.y}-${this.props.mediumSquareIndex}`} autoComplete="off" className='cell' type="text" value={this.state.value} onKeyDown={this.handleKeyDown} onClick={this.onClick} style={{ width: '45px', height: '45px', fontSize: '30px', fontFamily: 'Times New Roman', textAlign: 'center' }} />
       </form>
     );
   };
