@@ -155,30 +155,5 @@ class App extends React.Component {
     );
   }
 }
-// function App() {
-//   return (
-//     // <div className="App">
-//     //   <header className="App-header">
-//     //     <img src={logo} className="App-logo" alt="logo" />
-//     //     <p>
-//     //       Edit <code>src/App.js</code> and save to reload.
-//     //     </p>
-//     //     <a
-//     //       className="App-link"
-//     //       href="https://reactjs.org"
-//     //       target="_blank"
-//     //       rel="noopener noreferrer"
-//     //     >
-//     //       Learn React
-//     //     </a>
-//     //   </header>
-//     // </div>
-//     // <Grid />
-//     <div id='app'>
-//         <Grid width="3" height="3" playerOneColor="blue" playerTwoColor="pink"></Grid>
-//         <input type='button' onClick={ this.onClick } value='Reset' />
-//       </div>
-//   );
-// }
 
 export default App;
