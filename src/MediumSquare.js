@@ -16,7 +16,8 @@ class MediumSquare extends React.Component {
       const cols = [];
       for (let x = 0; x < this.props.size; x++) {
         cols.push(
-          <td>
+          <td
+          key={x+y}>
             <Cell
               x={this.state.x * this.props.size + x}
               y={this.state.y * this.props.size + y}
@@ -26,7 +27,8 @@ class MediumSquare extends React.Component {
         );
       }
 
-      rows.push(<tr>{cols}</tr>);
+      rows.push(<tr
+        key={y}>{cols}</tr>);
     }
 
     return (

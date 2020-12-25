@@ -10,7 +10,6 @@ class Cell extends React.Component {
       value: "",
     };
 
-    // this.handleChange = this.handleChange.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.onClick = this.onClick.bind(this);
   }
@@ -18,22 +17,24 @@ class Cell extends React.Component {
   onClick(event) {
     let cellsList = document.querySelectorAll(".cell");
     for (var index = 0; index < cellsList.length; index++) {
-      cellsList[index].style.background = "white";
+      if (!cellsList[index].readOnly)
+        cellsList[index].style.background = "white";
     }
   }
-  // handleChange(event) {
-  //   // console.log(event.target)
-  //   this.setState({value: event.target.value});
-  // };
 
   handleKeyDown(event) {
-    // console.log(event.key);
-    if (event.key >= 0 && event.key <= 9 && this.state.value.length === 0) {
-      this.setState({ value: this.state.value + event.key });
-    } else if (event.key === "Backspace" && this.state.value.length === 1) {
-      this.setState({
-        value: this.state.value.substring(0, this.state.value.length - 1),
-      });
+    if (
+      !document.querySelector(
+        "[id^='cell-" + this.state.x + "-" + this.state.y + "']"
+      ).readOnly
+    ) {
+      if (event.key >= 1 && event.key <= 9 && this.state.value.length === 0) {
+        this.setState({ value: this.state.value + event.key });
+      } else if (event.key === "Backspace" && this.state.value.length === 1) {
+        this.setState({
+          value: this.state.value.substring(0, this.state.value.length - 1),
+        });
+      }
     }
   }
 

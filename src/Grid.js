@@ -13,7 +13,8 @@ class Grid extends React.Component {
       const cols = [];
       for (let x = 0; x < Math.sqrt(this.state.size); x++) {
         cols.push(
-          <td>
+          <td
+          key={x+y}>
             <MediumSquare
               size={Math.sqrt(this.state.size)}
               x={x}
@@ -22,7 +23,8 @@ class Grid extends React.Component {
           </td>
         );
       }
-      rows.push(<tr>{cols}</tr>);
+      rows.push(<tr
+        key={y}>{cols}</tr>);
     }
 
     return (
