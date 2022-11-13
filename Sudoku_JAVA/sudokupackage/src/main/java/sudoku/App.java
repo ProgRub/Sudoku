@@ -5,6 +5,6 @@ public final class App {
     }
 
     public static void main(String[] args) {
-        Window w = new Window(9, 60);
+        new Window(9, 60);
     }
 }
